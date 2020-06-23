@@ -1,0 +1,85 @@
+/* body */
+body {
+    margin: 0;
+    font-family: Verdana;
+}
+
+/* header */
+header {
+    height: 70px;
+    background-color: white;
+    box-shadow: grey 0 0 4px 0;
+}
+
+/* Login box */
+.login-box {
+    float: left;
+    box-shadow: grey 0 0 2px 0;
+    width: 525px;
+    height: 250px;
+    margin: 50px 25px 0 75px;
+    padding: 20px;
+}
+
+#registration-username, #registration-password {
+    height: 30px;
+    width: 470px;
+    margin: 30px 15px 0 15px;
+    padding-left: 20px;
+}
+
+#login-box-forget {
+    text-decoration: none;
+    color: grey;
+    float: left;
+    margin: 32px 15px;
+}
+
+#registration-button {
+    float: right;
+    margin: 24px 21px;
+    padding: 10px 10px 9px 10px;
+    width: 120px;
+    color: white;
+    background-color: #b6aaff;
+    border: 1px solid grey;
+}
+
+/* Registration box */
+.registration-box {
+    box-shadow: grey 0 0 2px 0;
+    width: 530px;
+    height: 380px;
+    margin: 50px auto;
+    padding: 35px 30px 15px 35px;
+    font-size: 25px;
+}
+
+.alertSpan {
+    margin-left: 15px;
+    font-size: 13px;
+}
+
+/* footer */
+footer {
+    height: 100px;
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    box-shadow: grey 0 0 3px 2px;
+    padding-left: 20px;
+}
+
+.footer-box {
+    padding: 41px 56px;
+    float: left;
+}
+
+#regulations {
+    color:lightgray;
+}
+
+#footer-img {
+    float: right;
+    width: 190px;
+    padding: 9px 75px;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>inDress - Szafing w nowej odsłonie! Kupuj, sprzedawaj, wymieniaj się...</title>
+    <link rel="shortcut icon" href="img/indress_logo.png">
+    <link rel="stylesheet" type="text/css" href="css/registration.css">
+</head>
+<body>
+<header>
+    <a th:href="@{/start}"><img src="img/indress_logo.png" style="width: 50px; padding-left: 25px;" alt="logo"/></a>
+    <a th:href="@{/start}"><img src="img/indress_napis.png" style="width: 150px;" alt="napis"/></a>
+</header>
+<!-- Main container -->
+<div class="main-container" style="height: 540px;">
+    <!-- Registration box -->
+    <div class="registration-box">
+        <p style="margin: 0;">
+            <h1 style="margin: 0 15px;">Rejestracja</h1>
+        </p>
+        <form th:action="@{/register}" method="post" th:object="${newAppUser}">
+            <input type="text" id="registration-username" placeholder="Login" th:field="*{username}">
+            <span class="alertSpan">Login musi zawierać minimum 6 znaków</span><br>
+            <input type="password" id="registration-password" placeholder="Hasło" th:field="*{password}">
+            <span class="alertSpan">Hasło musi zawierać minimum 8 znaków</span><br>
+            <input type="submit" id="registration-button" value="ZAREJESTRUJ">
+        </form>
+    </div>
+</div>
+<!-- Footer -->
+<footer>
+    <div class="footer-box">
+        <span>Korzystanie z serwisu oznacza akceptację </span>
+        <a href="/regulamin" target="_blank" id="regulations">regulaminu</a>
+    </div>
+    <img src="img/indress_napis_bialy.png" alt="logo" id="footer-img">
+</footer>
+</body>
+</html>

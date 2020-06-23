@@ -1,0 +1,98 @@
+/* body */
+body {
+    margin: 0;
+    font-family: Verdana, monospace;
+}
+
+/* header */
+header {
+    height: 70px;
+    background-color: white;
+    box-shadow: grey 0 0 4px 0;
+}
+
+#find-box {
+    vertical-align: top;
+    margin: 17px 0 17px 130px;
+    padding: 5px 0 5px 10px;
+    width: 600px;
+    height: 24px;
+    border: 1px solid grey;
+    border-right: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+#find-button {
+    vertical-align: top;
+    margin: 17px 20px 17px -6px;
+    padding: 10px 10px 9px 10px;
+    width: 100px;
+    color: white;
+    background-color: #b6aaff;
+    border: 1px solid grey;
+}
+
+#login-button {
+    float: right;
+    vertical-align: top;
+    margin: 17px 25px 17px -4px;
+    padding: 10px 10px 9px 10px;
+    width: 100px;
+    color: white;
+    background-color: #b6aaff;
+    border: 1px solid grey;
+}
+
+/* main container */
+.main-container {
+}
+
+/* Service box */
+.service-box {
+    background-color: white;
+    height: 100px;
+    padding: 20px;
+    margin: 25px;
+    box-shadow: grey 0 0 2px 0;
+}
+
+/* Searched item container */
+.searched-item-container {
+    max-width: 880px;
+    width: 880px;
+    box-shadow: grey 0 0 2px 0;
+    padding: 0 10px 20px 10px;
+    margin: 0 25px 25px 25px;
+    float: left;
+}
+
+.item-box {
+    background-color: white;
+    height: 360px;
+    width: 200px;
+    margin: 20px 10px 0 10px;
+    box-shadow: grey 0 0 2px 0;
+    float: left;
+}
+
+.item-box-brand, .item-box-size, .item-box-price {
+    margin: 0;
+    padding: 5px;
+    font-size: 15px;
+    color: grey;
+}
+
+.item-box-price {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.ads-box {
+    min-height: 540px;
+    margin-right: 25px;
+    width: 328px;
+    float: right;
+    background-color: white;
+    box-shadow: grey 0 0 2px 0;
+}

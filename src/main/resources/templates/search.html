@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>inDress - Szafing w nowej odsłonie! Kupuj, sprzedawaj, wymieniaj się...</title>
+    <link rel="shortcut icon" href="img/indress_logo.png">
+    <link rel="stylesheet" type="text/css" href="css/search.css">
+</head>
+<body>
+<header>
+    <a th:href="@{/start}"><img src="img/indress_logo.png" style="width: 50px; padding-left: 25px;" alt="logo"/></a>
+    <a th:href="@{/start}"><img src="img/indress_napis.png" style="width: 150px;" alt="napis"/></a>
+    <input id="find-box" type="text" name="findBox" placeholder="Chcę coś nowego...">
+    <a th:href="@{/search}"><input id="find-button" type="submit" value="SZUKAJ"></a>
+    <a th:href="@{/logout}"><input id="login-button" type="button" value="WYLOGUJ"></a>
+</header>
+<!-- Main container -->
+<div class="main-container">
+    <!-- Service box -->
+    <div class="service-box">
+    </div>
+    <!-- Searched item container -->
+    <div class="searched-item-container">
+        <div class="item-box" th:each="item : ${resultList}" th:object="${item}">
+            <img th:src="*{getImg()}" alt="img/items/unknown.png" style="width: 200px; height: 260px">
+            <p class="item-box-brand" th:text="*{getBrand()}"></p>
+            <p class="item-box-size" th:text="*{getSize()}"></p>
+            <p class="item-box-price" th:text="*{getPrice()}+'zł'"></p>
+        </div>
+    </div>
+    <!-- Ads box -->
+    <div class="ads-box">
+    </div>
+</div>
+</body>
+</html>

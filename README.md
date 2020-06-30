@@ -107,3 +107,4 @@ Project is created with:
 * Lombok
 * Swagger
 
+**Autor: Adrian Kietliński

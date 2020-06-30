@@ -25,6 +25,9 @@ public class ClientController {
     private ClientService clientService;
     private ItemService itemService;
 
+    private BigDecimal wallet;
+    private Integer number;
+
     public ClientController(AppUserService appUserService, ClientService clientService, ItemService itemService) {
         this.appUserService = appUserService;
         this.clientService = clientService;
@@ -38,10 +41,12 @@ public class ClientController {
 
     @RequestMapping("/start")
     public String start(HttpServletRequest httpServletRequest, Model model) {
+        wallet = appUserService.getWallet();
         LoginHyperlink loginHyperlink = clientService.getLoginHyperlink(httpServletRequest.isUserInRole("USER"));
         List<Item> lastAddedItemList = clientService.getLastAddedItemList();
-        Integer number = clientService.getAdNumber();
+        number = clientService.getAdNumber();
 
+        model.addAttribute("wallet", wallet);
         model.addAttribute("loginHyperlink", loginHyperlink);
         model.addAttribute("lastAddedItemList", lastAddedItemList);
         model.addAttribute("adsNumber", number);
@@ -50,7 +55,7 @@ public class ClientController {
 
     @RequestMapping("/login")
     public ModelAndView login() {
-        Integer number = clientService.getAdNumber();
+        number = clientService.getAdNumber();
 
         return new ModelAndView("login", "adsNumber", number);
     }
@@ -80,12 +85,26 @@ public class ClientController {
             @RequestParam(required = false) String itemName,
             @RequestParam(required = false) String mainCategory,
             @RequestParam(required = false) String clothes) {
-        itemService.getResultList(Optional.ofNullable(itemName), Optional.ofNullable(mainCategory), Optional.ofNullable(clothes));
-        Integer number = clientService.getAdNumber();
+        wallet = appUserService.getWallet();
+        number = clientService.getAdNumber();
+        itemService.getResultList(
+                Optional.ofNullable(itemName),
+                Optional.ofNullable(mainCategory),
+                Optional.ofNullable(clothes));
 
+        model.addAttribute("wallet", wallet);
         model.addAttribute("adsNumber", number);
         model.addAttribute("resultList", itemService.getItemList());
         return "search";
+    }
+
+    @RequestMapping("/item")
+    public String getItemById(@RequestParam long id, Model model){
+        wallet = appUserService.getWallet();
+
+        model.addAttribute("wallet", wallet);
+        model.addAttribute("item", itemService.getItemById(id));
+        return "showItem";
     }
 
 }

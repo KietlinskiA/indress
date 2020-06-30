@@ -16,6 +16,10 @@
         <input id="find-box" type="text" name="itemName" placeholder="Chcę coś nowego...">
         <input id="find-button" type="submit" value="SZUKAJ">
     </form>
+    <div id="wallet">
+        <span>Stan konta: </span><br>
+        <span th:text="${wallet}" style="font-weight: bold"></span>
+    </div>
     <a th:href="${loginHyperlink.getHyperlink()}" style="float: right">
         <input id="login-button" type="button" th:value="${loginHyperlink.getLoginButton()}">
     </a>

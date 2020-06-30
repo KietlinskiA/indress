@@ -16,7 +16,13 @@
         <input id="find-box" type="text" name="itemName" placeholder="Chcę coś nowego...">
         <input id="find-button" type="submit" value="SZUKAJ">
     </form>
-    <a th:href="@{/logout}" style="float: right"><input id="login-button" type="button" value="WYLOGUJ"></a>
+    <div id="wallet">
+        <span>Stan konta: </span><br>
+        <span th:text="${wallet}" style="font-weight: bold"></span>
+    </div>
+    <a th:href="@{/logout}" style="float: right">
+        <input id="login-button" type="button" value="WYLOGUJ">
+    </a>
 </header>
 <!-- Main container -->
 <div class="main-container" th:object="${item}">

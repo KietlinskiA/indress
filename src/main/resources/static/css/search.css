@@ -23,12 +23,19 @@ header {
 
 #find-button {
     vertical-align: top;
-    margin: 17px 20px 17px -6px;
+    margin: 17px 10px 17px -6px;
     padding: 10px 10px 9px 10px;
     width: 100px;
     color: white;
     background-color: #b6aaff;
     border: 1px solid grey;
+}
+
+#wallet {
+    font-size: 13px;
+    padding: 16px 12px;
+    text-align: center;
+    float: left;
 }
 
 #login-button {

@@ -30,7 +30,7 @@ public class AppUser implements UserDetails {
     @Column(name = "appUser_username", nullable = false, unique = true)
     private String username;
 
-    @Size(min = 8, max = 32)
+    @Size(min = 8)
     @Column(name = "appUser_password", nullable = false)
     private String password;
 

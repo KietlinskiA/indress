@@ -5,8 +5,8 @@ Jest to jeden z kolejnych projektów non-profit stworzonych, aby szlifować swoj
 ![App image](src/main/resources/static/img/readme/example1.png)
 
 ## 1. Kategorie
-* [Informacje generalne](#2-general-info)
-* [Technologie](#3-technologies)
+* [Informacje generalne](#2-Informacje-generalne)
+* [Technologie](#3-Technologie)
 
 ## 2. Informacje generalne
 Indress App!

@@ -27,7 +27,7 @@
     </div>
     <!-- Ads box -->
     <div class="ads-box">
-        <img src="img/ads/big-ads-1.jpg" alt="ads" id="ads-img">
+        <img th:src="'img/ads/big-ads-'+${adsNumber}+'.jpg'" alt="ads" id="ads-img">
     </div>
     <!-- Registration box -->
     <div class="registration-box">
@@ -59,7 +59,7 @@
 <footer>
     <div class="footer-box">
         <span>Korzystanie z serwisu oznacza akceptację </span>
-        <a href="/regulamin" target="_blank" id="regulations">regulaminu</a>
+        <a href="#" target="_blank" id="regulations">regulaminu</a>
     </div>
     <img src="img/indress_napis_bialy.png" alt="logo" id="footer-img">
 </footer>

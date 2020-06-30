@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>inDress - Szafing w nowej odsłonie! Kupuj, sprzedawaj, wymieniaj się...</title>
+    <link rel="shortcut icon" href="img/indress_logo.png">
+    <link rel="stylesheet" type="text/css" href="css/thankYou.css">
+</head>
+<body>
+<header>
+    <a th:href="@{/start}"><img src="img/indress_logo.png" style="width: 50px; padding-left: 25px;" alt="logo"/></a>
+    <a th:href="@{/start}"><img src="img/indress_napis.png" style="width: 150px;" alt="napis"/></a>
+</header>
+<!-- Main container -->
+<div class="main-container" style="height: 437px;">
+    <!-- Success box -->
+    <div class="ok-box">
+        <img src="img/trans_ok.png" alt="ok" style="width: 100px; height: 100px;">
+        <h3>Dziękujemy za zakup!</h3>
+        <a style="text-decoration: none; color: white;" th:href="@{/search}"><input id="ok-button" type="button" value="SZUKAM DALEJ!"></a>
+    </div>
+</div>
+<!-- Footer -->
+<footer>
+    <div class="footer-box">
+        <span>Korzystanie z serwisu oznacza akceptację </span>
+        <a href="/regulamin" target="_blank" id="regulations">regulaminu</a>
+    </div>
+    <img src="img/indress_napis_bialy.png" alt="logo" id="footer-img">
+</footer>
+</body>
+</html>

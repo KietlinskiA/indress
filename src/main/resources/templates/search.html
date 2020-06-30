@@ -8,28 +8,64 @@
 </head>
 <body>
 <header>
-    <a th:href="@{/start}"><img src="img/indress_logo.png" style="width: 50px; padding-left: 25px;" alt="logo"/></a>
-    <a th:href="@{/start}"><img src="img/indress_napis.png" style="width: 150px;" alt="napis"/></a>
-    <input id="find-box" type="text" name="findBox" placeholder="Chcę coś nowego...">
-    <a th:href="@{/search}"><input id="find-button" type="submit" value="SZUKAJ"></a>
-    <a th:href="@{/logout}"><input id="login-button" type="button" value="WYLOGUJ"></a>
+    <a th:href="@{/start}" style="float: left; text-decoration: none;">
+        <img src="img/indress_logo.png" style="width: 50px; padding-left: 25px;" alt="logo"/>
+        <img src="img/indress_napis.png" style="width: 150px;" alt="napis"/>
+    </a>
+    <form method="get" th:action="@{/search}" style="float: left">
+        <input id="find-box" type="text" name="itemName" placeholder="Chcę coś nowego...">
+        <input id="find-button" type="submit" value="SZUKAJ">
+    </form>
+    <a th:href="@{/logout}" style="float: right"><input id="login-button" type="button" value="WYLOGUJ"></a>
 </header>
 <!-- Main container -->
 <div class="main-container">
     <!-- Service box -->
     <div class="service-box">
+        <p>
+            <a th:href="@{/start}" style="text-decoration: none; color: black;">Strona główna</a>
+        </p>
+        <form method="get" th:action="@{/search}">
+            <p style="float: left">
+                <span>Kategoria: </span>
+                <label>
+                    <select name="mainCategory" class="service-box-select">
+                        <option>---</option>
+                        <option>Mężczyźni</option>
+                        <option>Kobiety</option>
+                    </select>
+                </label>
+            </p>
+            <p style="float: left">
+                <span>Rodzaj: </span>
+                <label>
+                    <select name="clothes" class="service-box-select">
+                        <option>---</option>
+                        <option>Jeansy</option>
+                        <option>Buty</option>
+                        <option>T-shirty</option>
+                    </select>
+                </label>
+            </p>
+            <p style="float: right">
+                <input type="submit" value="ODŚWIEŻ" id="refresh-button" style="margin: 0">
+            </p>
+        </form>
+    </div>
+    <!-- Ads box -->
+    <div class="ads-box">
+        <img th:src="'img/ads/big-ads-'+${adsNumber}+'.jpg'" alt="ads" id="ads-img" style="width: 333px; height: 540px">
     </div>
     <!-- Searched item container -->
     <div class="searched-item-container">
         <div class="item-box" th:each="item : ${resultList}" th:object="${item}">
-            <img th:src="*{getImg()}" alt="img/items/unknown.png" style="width: 200px; height: 260px">
-            <p class="item-box-brand" th:text="*{getBrand()}"></p>
-            <p class="item-box-size" th:text="*{getSize()}"></p>
-            <p class="item-box-price" th:text="*{getPrice()}+'zł'"></p>
+            <a th:href="@{/item}+'?id='+*{getId()}" style="text-decoration: none; color: black;">
+                <img th:src="*{getImg()}" alt="img/items/unknown.png" style="width: 200px; height: 260px">
+                <p class="item-box-brand" th:text="*{getBrand()}"></p>
+                <p class="item-box-size" th:text="*{getSize()}"></p>
+                <p class="item-box-price" th:text="*{getPrice()}+'zł'"></p>
+            </a>
         </div>
-    </div>
-    <!-- Ads box -->
-    <div class="ads-box">
     </div>
 </div>
 </body>

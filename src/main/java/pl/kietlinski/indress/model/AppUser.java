@@ -10,6 +10,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Collection;
 import java.util.Collections;
 
@@ -24,19 +26,21 @@ public class AppUser implements UserDetails {
     @Column(name = "appUser_id")
     private Long id;
 
-    @NotNull
     @Size(min = 6)
-    @Column(name = "appUser_username")
+    @Column(name = "appUser_username", nullable = false, unique = true)
     private String username;
 
-    @NotNull
     @Size(min = 8, max = 32)
-    @Column(name = "appUser_password")
+    @Column(name = "appUser_password", nullable = false)
     private String password;
+
+    @Column(name = "appUser_wallet")
+    private BigDecimal wallet;
 
     public AppUser(@NotNull @Size(min = 6) String username, @NotNull @Size(min = 8, max = 32) String password) {
         this.username = username;
         this.password = password;
+        this.wallet = new BigDecimal(BigInteger.valueOf(0), 2);
     }
 
     @Override

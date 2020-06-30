@@ -44,81 +44,80 @@ header {
 
 /* main container */
 .main-container {
-    margin-top: 25px;
-    width: 100%;
-    min-height: 540px;
+    margin: 25px;
 }
 
-.left-service-menu {
-    width: 353px;
-    height: 210px;
-    padding: 20px;
+/* Img box */
+.img-box {
     float: left;
-    background-color: white;
+    width: 778px;
+    height: 800px;
+    text-align: center;
+    padding: 20px;
     box-shadow: grey 0 0 2px 0;
 }
 
-ul, ol {
-    list-style: none;
+/* Img box */
+.info-box {
+    width: 375px;
+    height: 300px;
+    padding: 20px;
+    box-shadow: grey 0 0 2px 0;
+    float: right;
 }
 
-a {
+#info-box-name {
+    margin: 0;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#info-box-details {
+    margin: 0;
+}
+
+#info-box-price {
+    font-size: 40px;
+    color: red;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+#info-box-courier-cost {
+    color: grey;
+    margin: 0;
+    font-size: 15px;
+}
+
+#info-box-buy-item-button {
+    margin-top: 40px;
+    width: 100%;
+    height: 50px;
+    color: white;
+    background-color: grey;
+    font-size: 20px;
+}
+
+.hyperlink {
     text-decoration: none;
     color: black;
 }
 
-.top-ads-menu {
-    width: 890px;
-    height: 250px;
-    margin-left: 25px;
-    float: right;
-    background-color: white;
-    box-shadow: grey 0 0 2px 0;
-}
-
-.last-added-menu {
-    width: 1269px;
-    height: 225px;
-    margin-top: 25px;
-    padding: 20px;
-    float: left;
-    background-color: white;
-    box-shadow: grey 0 0 2px 0;
-}
-
-.last-added-menu-box {
-    float: left;
-    text-align: center;
-    padding: 27px 5.7px;
-    width: 200px;
-}
-
-/* contact */
-.contact-container {
-    height: 30px;
-    padding: 30px 60px;
-    background-color: white;
-    margin: 25px 0;
-    box-shadow: grey 0 0 2px 0;
-}
-
-.contact-img {
-    width: 30px;
-    height: 30px;
-    padding: 0 10px;"
-}
 
 /* footer */
 footer {
+    float: left;
     height: 100px;
+    width: 1289px;
     background-color: rgba(0,0,0,0.6);
     color: white;
     box-shadow: grey 0 0 3px 2px;
     padding-left: 20px;
+    margin-top: 25px;
 }
 
 .footer-box {
-    padding: 41px 50px;
+    padding: 41px 56px;
     float: left;
 }
 

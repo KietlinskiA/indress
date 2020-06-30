@@ -9,4 +9,6 @@ public interface AppUserRepository extends JpaRepository<AppUser, Long> {
 
     AppUser findAppUserByUsername(String username);
 
+    int countAppUsersByUsername(String username);
+
 }

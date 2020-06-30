@@ -19,7 +19,6 @@ header {
     height: 24px;
     border: 1px solid grey;
     border-right: 0;
-    border-radius: 5px 0 0 5px;
 }
 
 #find-button {
@@ -50,10 +49,27 @@ header {
 /* Service box */
 .service-box {
     background-color: white;
+    float: left;
+    width: 860px;
     height: 100px;
     padding: 20px;
     margin: 25px;
     box-shadow: grey 0 0 2px 0;
+}
+
+.service-box-select, #refresh-button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: 2px solid #b6aaff;
+    background-color: white;
+}
+
+#refresh-button {
+    background-color: white;
+    margin: 0;
+    padding: 5px 10px;
+    width: 104px;
+    border: 3px solid #b6aaff;
 }
 
 /* Searched item container */
@@ -91,7 +107,8 @@ header {
 .ads-box {
     min-height: 540px;
     margin-right: 25px;
-    width: 328px;
+    margin-top: 25px;
+    width: 333px;
     float: right;
     background-color: white;
     box-shadow: grey 0 0 2px 0;

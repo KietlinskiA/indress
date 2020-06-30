@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>inDress - Szafing w nowej odsłonie! Kupuj, sprzedawaj, wymieniaj się...</title>
+    <link rel="shortcut icon" href="img/indress_logo.png">
+    <link rel="stylesheet" type="text/css" href="css/showItem.css">
+</head>
+<body>
+<header>
+    <a th:href="@{/start}" style="float: left; text-decoration: none;">
+        <img src="img/indress_logo.png" style="width: 50px; padding-left: 25px;" alt="logo"/>
+        <img src="img/indress_napis.png" style="width: 150px;" alt="napis"/>
+    </a>
+    <form method="get" th:action="@{/search}" style="float: left">
+        <input id="find-box" type="text" name="itemName" placeholder="Chcę coś nowego...">
+        <input id="find-button" type="submit" value="SZUKAJ">
+    </form>
+    <a th:href="@{/logout}" style="float: right"><input id="login-button" type="button" value="WYLOGUJ"></a>
+</header>
+<!-- Main container -->
+<div class="main-container" th:object="${item}">
+    <!-- Img box -->
+    <div class="img-box">
+        <img th:src="*{getImg()}" alt="item photo">
+    </div>
+    <!-- Info box -->
+    <div class="info-box">
+        <p style="margin: 0; margin-bottom: 30px;">
+            <a class="hyperlink" th:href="@{/start}">Strona główna</a>
+            <span> / </span>
+            <a class="hyperlink" th:href="@{/search}+'?mainCategory='+*{getMainCategory()}" th:text="*{getMainCategory()}"></a>
+            <span> / </span>
+            <a class="hyperlink" th:href="@{/search}+'?mainCategory='+*{getMainCategory()}+'&clothes='+*{getClothes()}" th:text="*{getClothes()}"></a>
+        </p>
+        <p id="info-box-name" th:text="*{getName()}"></p>
+        <p id="info-box-details" th:text="*{getBrand()}+' - '+*{getSize()}+' - '+*{getCondition()}+' - '+*{getColor()}"></p>
+        <p id="info-box-price" th:text="*{getPrice()}"></p>
+        <p id="info-box-courier-cost">+ koszty wysyłki</p>
+        <a th:href="@{/buy}+'?id='+*{getId()}">
+            <input id="info-box-buy-item-button" type="button" value="Kup teraz" name="buyItem">
+        </a>
+    </div>
+</div>
+<!-- Footer -->
+<footer>
+    <div class="footer-box">
+        <span>Korzystanie z serwisu oznacza akceptację </span>
+        <a href="#" target="_blank" id="regulations">regulaminu</a>
+    </div>
+    <img src="img/indress_napis_bialy.png" alt="logo" id="footer-img">
+</footer>
+</body>
+</html>

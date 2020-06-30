@@ -1,0 +1,61 @@
+/* body */
+body {
+    margin: 0;
+    font-family: Verdana, monospace;
+}
+
+/* header */
+header {
+    height: 70px;
+    background-color: white;
+    box-shadow: grey 0 0 4px 0;
+}
+
+/* Pay box */
+.pay-box {
+    box-shadow: grey 0 0 2px 0;
+    width: 530px;
+    height: 315px;
+    margin: 60px auto;
+    padding: 35px 30px 15px 35px;
+    font-size: 25px;
+}
+
+.pay-box-price {
+    width: 246px;
+    text-align: right;
+    padding: 0 10px;
+}
+
+#buy-button {
+    margin-top: 40px;
+    width: 30%;
+    height: 50px;
+    color: white;
+    background-color: grey;
+    font-size: 20px;
+}
+
+/* footer */
+footer {
+    height: 100px;
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    box-shadow: grey 0 0 3px 2px;
+    padding-left: 20px;
+}
+
+.footer-box {
+    padding: 41px 56px;
+    float: left;
+}
+
+#regulations {
+    color:lightgray;
+}
+
+#footer-img {
+    float: right;
+    width: 190px;
+    padding: 9px 75px;
+}

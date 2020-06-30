@@ -3,7 +3,6 @@ package pl.kietlinski.indress.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -36,13 +35,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/start").permitAll()
                 .antMatchers("/login").permitAll()
+                .antMatchers("/logout").permitAll()
                 .antMatchers("/singup").permitAll()
-                .antMatchers("/registration").permitAll()
-                .antMatchers("/search").permitAll()
+                .antMatchers("/register").permitAll()
+                .antMatchers("/search").hasAnyRole("USER", "ADMIN")
+                .antMatchers("/item").hasAnyRole("USER", "ADMIN")
+                .antMatchers("/buy").hasAnyRole("USER", "ADMIN")
+                .antMatchers("/success").hasAnyRole("USER", "ADMIN")
                 .and()
                 .formLogin().loginPage("/login").defaultSuccessUrl("/start").permitAll()
                 .and()
                 .logout().logoutSuccessUrl("/start").permitAll();
-        http.csrf().disable();
     }
 }

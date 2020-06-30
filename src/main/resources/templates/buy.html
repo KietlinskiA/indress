@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/" lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>inDress - Szafing w nowej odsłonie! Kupuj, sprzedawaj, wymieniaj się...</title>
+    <link rel="shortcut icon" href="img/indress_logo.png">
+    <link rel="stylesheet" type="text/css" href="css/buy.css">
+</head>
+<body>
+<header>
+    <a th:href="@{/start}"><img src="img/indress_logo.png" style="width: 50px; padding-left: 25px;" alt="logo"/></a>
+    <a th:href="@{/start}"><img src="img/indress_napis.png" style="width: 150px;" alt="napis"/></a>
+</header>
+<!-- Main container -->
+<div class="main-container" style="height: 437px;" th:object="${item}">
+    <!-- Pay box -->
+    <div class="pay-box">
+        <h3 style="margin: 3px;" th:text="*{getName()}"></h3><br>
+        <form th:action="@{/success}">
+            <table>
+                <tr>
+                    <td>
+                        <span>Koszt przedmiotu: </span>
+                    </td>
+                    <td class="pay-box-price" th:text="*{getPrice()}"></td>
+                    <td>
+                        <span>zł</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color: grey; font-size: 20px;">
+                        <span>Koszt wysyłki: </span>
+                    </td>
+                    <td class="pay-box-price">10.00</td>
+                    <td>
+                        <span>zł</span>
+                    </td>
+                </tr>
+                <br>
+                <tr>
+                    <td>
+                        <span>Stan konta: </span>
+                    </td>
+                    <td class="pay-box-price" th:text="${user.getWallet()}"></td>
+                    <td>
+                        <span>zł</span>
+                    </td>
+                </tr>
+            </table>
+            <input type="hidden" name="id" th:value="*{getId()}">
+            <input type="submit" id="buy-button" value="KUP">
+        </form>
+    </div>
+</div>
+<!-- Footer -->
+<footer>
+    <div class="footer-box">
+        <span>Korzystanie z serwisu oznacza akceptację </span>
+        <a href="/regulamin" target="_blank" id="regulations">regulaminu</a>
+    </div>
+    <img src="img/indress_napis_bialy.png" alt="logo" id="footer-img">
+</footer>
+</body>
+</html>

@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
@@ -34,19 +35,26 @@ public class Item {
     @Column(name = "item_description")
     private String description;
     @Column(name = "item_price")
-    private String price;
+    private BigDecimal price;
     @Column(name = "item_img")
     private String img;
+    @Column(name = "item_main_category")
+    private String mainCategory;
+    @Column(name = "item_clothes")
+    private String clothes;
 
-    public Item(String name, String brand, String size, String condition, String color, String description) {
+
+    public Item(@Size(max = 43) String name, String brand, String size, String condition, String color, LocalDateTime addedData, String description, BigDecimal price, String img, String mainCategory, String clothes) {
         this.name = name;
         this.brand = brand;
         this.size = size;
         this.condition = condition;
         this.color = color;
-        this.addedData = LocalDateTime.now();
+        this.addedData = addedData;
         this.description = description;
+        this.price = price;
+        this.img = img;
+        this.mainCategory = mainCategory;
+        this.clothes = clothes;
     }
-
-
 }
